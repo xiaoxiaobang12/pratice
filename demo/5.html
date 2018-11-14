@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    
+</head>
+
+<body>
+    <!-- <div id="outer">
+        <input type="button" value="变宽">
+        <input type="button" value="变高">
+        <input type="button" value="变色">
+        <input type="button" value="隐藏">
+        <input type="button" value="重置">
+        <div id="div1"></div>
+    </div>
+
+    <script>
+        
+        var oAtt = ['width', 'height', 'background', 'display', 'display'];
+        var oVal = ['200px', '300px', 'red', 'none', 'block'];
+       $('#outer input').each(function(i,e){
+           $(e).on('click',function(){
+               var data={};
+               data[oAtt[i]]=oVal[i];
+               $('#div1').css(data);
+               console.log(data[oAtt[i]],data)
+           })
+           
+       })
+
+        </script> -->
+    <!-- <div id="outer">
+        <ul id="skin">
+            <li id="red" title="红色">红</li>
+            <li id="green" class="current" title="绿色">绿</li>
+            <li id="black" title="黑色">黑</li>
+        </ul>
+        <ul id="nav">
+            <li><a href="javascript:;">新闻</a></li>
+            <li><a href="javascript:;">娱乐</a></li>
+            <li><a href="javascript:;">体育</a></li>
+            <li><a href="javascript:;">电影</a></li>
+            <li><a href="javascript:;">音乐</a></li>
+            <li class="last"><a href="javascript:;">旅游</a></li>
+        </ul>
+    </div>
+    <script>
+    
+        $(function () {
+          
+           
+            $('#skin li').each(function(i,e){
+
+            
+           $(e). on('click', function () {
+            $(e).addClass('current').siblings().removeClass('current')
+
+            $('link').attr('href', e.id + ".css");	
+
+            })
+        })
+    })
+
+    </script> -->
+   
+</body>
+
+</html>

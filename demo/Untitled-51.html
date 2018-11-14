@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+    <!-- <div id='example-17'>
+    <custom-input 
+    v-model="searchText"
+     placeholder="I'm got flu"
+    
+     >
+    </custom-input>
+<span>{{searchText}}</span>
+
+   </div> -->
+   <!-- <div id='example-18'>
+     <alert-box>Something bad happened</alert-box>
+     
+   </div> -->
+   <div id="dynamic-component-demo" class='demo'>
+       <button
+           v-for='tab in tabs'
+           v-bind:key='tab.name'
+           v-bind:class="['tab-button',{active:currentTab.name==tab.name}]"
+           v-on:click="currentTab=tab"
+       >{{tab.name}}</button>
+       <component
+       v-bind:is='currentTab.component' 
+       class='tab'
+       ></component>
+   </div>
+   <script src=index2.js></script>
+</body>
+</html>

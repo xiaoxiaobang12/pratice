@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- <style>
+    body,
+    div,
+    ul,
+    li,
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font: 12px/1.5 Tahoma;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    #outer {
+      width: 200px;
+      border: 1px solid #aaa;
+      margin: 10px auto;
+    }
+
+    #outer h2 {
+      cursor: pointer;
+      color: #57646E;
+      font-size: 14px;
+      font-weight: 400;
+      border: 1px solid;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 10px;
+      background: #ced3d7 url(img/ico.gif) 180px 15px no-repeat;
+      border-color: #fff #e9edf2;
+    }
+
+    #outer h2.open {
+      background-position: 180px -12px;
+    }
+
+    #outer ul {
+      border-top: 1px solid #DEE3E6;
+    }
+
+    #outer li {
+      height: 25px;
+      line-height: 25px;
+      vertical-align: top;
+    }
+
+    #outer a {
+      display: block;
+      color: #6b7980;
+      background: #e9edf2;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+
+    #outer a:hover {
+      background: #fff;
+      text-decoration: underline;
+    }
+  </style> -->
+  <!-- <style>
+    body,
+    div,
+    h2,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font: 12px/1.5 Tahoma;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    #outer {
+      width: 560px;
+      border: 1px solid #333;
+      margin: 10px auto;
+      padding: 0 0 10px 10px;
+    }
+
+    #outer h2 {
+      line-height: 30px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #outer ul:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
+    #outer ul {
+      zoom: 1;
+    }
+
+    #outer ul li {
+      position: relative;
+      float: left;
+      border: 1px solid #333;
+      margin: 10px 10px 0 0;
+      display: inline;
+    }
+
+    #outer ul li img {
+      position: absolute;
+      top: -14px;
+      left: -14px;
+      display: none;
+      border: 2px solid #999;
+      cursor: crosshair;
+      width: 128px;
+      height: 128px;
+
+    }
+
+    #outer ul li a {
+      color: #666;
+      width: 80px;
+      height: 80px;
+      display: block;
+      background: #f0f0f0;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    #outer ul li a strong {
+      display: block;
+    }
+
+    .zindex {
+      z-index: 1;
+    }
+  </style> -->
+  <style>
+    body,
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #000;
+    }
+
+    img {
+      border: 0;
+      border-radius: 3px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    #box {
+      width: 212px;
+      border: 5px solid #fff;
+      overflow: hidden;
+      zoom: 1;
+      background: #fff;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 0 0 3px 3px;
+    }
+
+    #box li,
+    #box li img {
+      float: left;
+      width: 50px;
+      height: 50px;
+    }
+
+    #box li {
+      margin: 3px 3px 0 0;
+    }
+
+    #box li.first {
+      position: relative;
+    }
+
+    #box li.first,
+    #box li.first img {
+      width: 156px;
+      height: 156px;
+    }
+
+    #box li.first div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 156px;
+      height: 156px;
+      display: none;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      background: #fff url(img/loading.gif) 50% 50% no-repeat;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  <!-- <div id="outer">
+    <h2 class="open">播放列表...</h2>
+    <ul style="display: none;">
+      <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+      <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+      <li><a href="javascript:;">猜不透 - 丁当</a></li>
+      <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+      <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+      <li><a href="javascript:;">流年 - 王菲</a></li>
+    </ul>
+  </div> -->
+  <!-- <div id="outer">
+    <h2>名车车标展示-鼠标移过显示车标</h2>
+    <ul>
+      <li>
+        <a href="javascript:;" title="BMW 宝马汽车"><strong>BMW</strong>宝马汽车</a>
+        <img src="img/1.png" alt="BMW 宝马汽车" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Alfa Romeo 阿尔法-罗米欧"><strong>Alfa Romeo</strong> 阿尔法-罗米欧</a>
+        <img src="img/2.png" alt="Alfa Romeo 阿尔法-罗米欧" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Skoda 斯柯达"><strong>Skoda</strong> 斯柯达</a>
+        <img src="img/3.png" alt="Skoda 斯柯达" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Volkswagen 大众汽车"><strong>Volkswagen</strong> 大众汽车</a>
+        <img src="img/4.png" alt="Volkswagen 大众汽车" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Saab 萨布牌轿"><strong>Saab</strong> 萨布牌轿车</a>
+        <img src="img/5.png" alt="Saab 萨布牌轿" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Lamborghini 兰博基尼"><strong>Lamborghini</strong> 兰博基尼</a>
+        <img src="img/6.png" alt="Lamborghini 兰博基尼" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Porsche 保时捷"><strong>Porsche</strong> 保时捷</a>
+        <img src="img/7.png" alt="Porsche 保时捷" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Peugeot 标致"><strong>Peugeot</strong> 标致</a>
+        <img src="img/1.png" alt="Peugeot 标致" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Mercedes1 梅赛德斯 奔驰"><strong>Mercedes1</strong> 梅赛德斯 奔驰</a>
+        <img src="img/2.png" alt="Mercedes1 梅赛德斯 奔驰" />
+      </li>
+      <li>
+        <a href="javascript:;" title="Buick 别克汽车"><strong>Buick</strong> 别克汽车</a>
+        <img src="img/3.png" alt="Buick 别克汽车" />
+      </li>
+
+    </ul>
+  </div> -->
+  <ul id="box">
+      <li class="first"><img src="img/big_1.jpg"><div></div></li>
+  
+
+
+    <li><a href="javascript:;"><img src="img/small_1.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_2.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_3.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_4.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_5.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_6.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_7.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_2.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_3.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_4.png"></a></li>
+    <li><a href="javascript:;"><img src="img/small_5.png"></a></li>
+  </ul>
+
+
+
+
+  <script>
+   $('#box img').mouseover(function(){
+     $('.first img').attr('src',this.src);
+     $('.first div').css('display','none')
+   })
+
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <!-- <style>
+
+        body{
+                font:12px/1.5 Tahoma;
+                text-align:center;
+            }
+            code,
+            input,
+            button{
+                font-family:inherit;
+            }
+            input{
+                border:1px solid #ccc;
+                padding:3px;
+            }
+            button{
+                cursor:pointer;
+            }
+    
+        </style> -->
+
+    <!-- <style>
+        #outer {
+            width: 330px;
+            height: 100px;
+            margin: 10px auto;
+        }
+
+        #outer div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            background: black;
+        }
+    </style> -->
+    <!-- <style>
+        body {
+            color: #fff;
+            font: 12px/1.5 Tahoma;
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            padding: 10px;
+            background: black;
+            border: 10px solid #000;
+            cursor: crosshair;
+        }
+
+        #div1.hover {
+            color: red;
+            background: #f0f0f0;
+            border: 10px solid red;
+        }
+    </style> -->
+    <!-- <style>
+          body,
+          input,
+          p{
+            margin:0;
+            padding:0;
+         }
+            body{
+                font:12px/1.5 Tahoma;
+            }
+            #outer{
+                width:200px;
+                margin:10px auto;
+            }
+            input{
+                margin-right:5px;
+                vertical-align:middle;
+            }
+            #tips{
+                padding:5px;
+                margin-top:5px;
+                background:#ffefa4;
+                border:1px solid #f90;
+                display:none;}
+            </style> -->
+    <!-- <style>
+                    body,
+                    ul,
+                    li,
+                    button{
+                        margin:0;
+                        padding:0;
+                    }
+                    body{
+                        font:12px/1.5 Tahoma;
+                    }
+                    ul{
+                        list-style-type:none;
+                    }
+                    button{
+                        cursor:pointer;
+                    }
+                    #outer{
+                        width:70px;
+                        margin:10px auto;
+                    }
+                    #ime{
+                        margin-top:5px;
+                        background:#fff;
+                        border:1px solid #9a99ff;
+                        display:none;
+                    }
+                    #ime li{
+                        width:100%;
+                        line-height:24px;
+                        display:inline-block;
+                        vertical-align:top;}
+                    #close{
+                        border-top:1px solid #9a99ff;
+                    }
+                    #ime li a{
+                        color:#00c;
+                        padding:0 5px;
+                        display:block;
+                        text-decoration:none;
+                    }
+                    #ime li a:hover{
+                        background:#d9e1f6;
+                    }
+                    </style> -->
+    <!-- <style>
+      body{
+           font:12px/1.5 Tahoma;
+        }
+      #outer{
+          width:500px;
+          margin:0 auto;}
+      #outer div{
+          border:2px solid #ccc;
+          padding:10px;
+          margin-bottom:10px;
+          text-indent:2em;
+          cursor:pointer;
+        }
+     </style> -->
+    <!-- <style>
+        body{
+             color:#999;
+             font:12px/1.5 Tahoma;
+            }
+         #outer{
+             width:500px;
+             margin:0 auto;
+            }
+         #outer input{
+             padding:3px;
+             border:1px solid #ccc;
+             font-family:inherit;
+             width:220px;
+             margin-right:10px;
+            }
+         .sum{
+             font-size:30px;
+             color:red;
+            }
+     </style>
+ -->
+    <!-- <style>
+        html,
+        body{
+            height:100%;
+            overflow:hidden;
+        }
+        body,
+        div,
+        h2{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font:12px/1.5 Tahoma;
+        }
+        center{
+            padding-top:10px;
+        }
+        button{
+            cursor:pointer;
+        }
+        #overlay{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity:0.5;
+            filter:alpha(opacity=50);
+            display:none;
+        }
+        #win{
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:400px;
+            height:200px;
+            background:#fff;
+            border:4px solid #f90;
+            margin:-102px 0 0 -202px;
+            display:none;
+        }
+        h2{
+            font-size:12px;
+            text-align:right;
+            background:#FC0;
+            border-bottom:3px solid #f90;
+            padding:5px;
+        }
+        h2 span{
+            color:#f90;
+            cursor:pointer;
+            background:#fff;
+            border:1px solid #f90;
+            padding:0 2px;
+        }
+ </style> -->
+    <!-- <style>
+        body,
+        p{
+            margin:0;
+            padding:0;
+        }
+        body{
+            color:#333;
+            font:12px/1.5 Tahoma;
+            padding-top:10px;
+        }
+        #outer{
+            width:300px;
+            margin:0 auto;
+        }
+        p{
+            margin-bottom:10px;
+        }
+        button{
+            margin-right:5px;
+        }
+        label{
+            width:5em;
+            display:inline-block;
+            text-align:right;
+        }
+        input{
+            padding:3px;
+            font-family:inherit;
+            border:1px solid #ccc;
+        }
+        #div1{
+            color:#fff;
+            width:180px;
+            height:180px;
+            background:#000;
+            margin:0 auto;
+            padding:10px;
+        }
+        </style> -->
+    <!-- <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #imgList {
+            width: 700px;
+            overflow: hidden;
+            zoom: 1;
+            border: 1px solid #333;
+            margin: 0 auto;
+            padding: 0 0 10px 10px;
+        }
+
+        #imgList li {
+            float: left;
+            width: 128px;
+            height: 128px;
+            border: 1px solid #ccc;
+            margin: 10px 10px 0 0;
+        }
+
+        #imgList li img {
+            float: left;
+            opacity: 0.3;
+            cursor: crosshair;
+            filter: alpha(opacity=30);
+            width: 100%;
+        }
+
+        #imgList li.current img {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+    </style> -->
+    <!-- 
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        #outer {
+            width: 450px;
+            margin: 10px auto;
+        }
+
+        #tab {
+            overflow: hidden;
+            zoom: 1;
+            background: #000;
+            border: 1px solid #000;
+        }
+
+         #tab li {
+            float: left;
+            color: #fff;
+            height: 30px;
+            cursor: pointer;
+            line-height: 30px;
+            list-style-type: none;
+            padding: 0 20px;
+        }
+
+      #tab li.current {
+            color: #000;
+            background: #ccc;
+        }
+
+        #content {
+            border: 1px solid #000;
+            border-top-width: 0;
+        }
+
+         #content ul {
+            line-height: 25px;
+            display: none;
+            margin: 0 30px;
+            padding: 10px 0;
+        } 
+    </style> -->
+    <style>
+        body,
+        ul,
+        li,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        #calendar {
+            width: 248px;
+            overflow: hidden;
+            zoom: 1;
+            background: #eaeaea;
+            margin: 10px auto;
+            padding: 0 0 10px 10px;
+        }
+
+        #calendar ul {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #calendar li {
+            color: #fff;
+            float: left;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+            background: #424242;
+            line-height: 1.3;
+            list-style-type: none;
+            border: 1px solid #424242;
+            margin: 10px 10px 0 0;
+            padding: 5px;
+        }
+
+        #calendar li.current {
+            color: #F69;
+            background: #fff;
+        }
+
+        #calendar li strong {
+            display: block;
+            font-size: 18px;
+        }
+
+        #msg {
+            color: #666;
+            background: #f1f1f1;
+            border: 1px solid #fff;
+            margin: 10px 10px 0 0;
+            padding: 5px;
+        }
+
+        #msg h2 {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p><input type="text" value="北京市"></p>
+    <p><input type="text" value="朝阳区"></p>
+    <p><button>传参</button></p>
+    <script>
+
+        $(document).ready(function () {
+            $('button').on('click', function (i, e) {
+                $('input').each(function () {
+
+
+
+                    alert($(this).val())
+                })
+            })
+        })
+ </script> -->
+    <!-- <center>
+        <button>点击将DIV变成红色</button>
+    </center>
+    <div id="outer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        $(function(){
+            $('button').on('click',function(){
+                $('#outer div').each(function(){
+                 
+                   console.log(this)
+                   $(this).css('background','red')
+                })
+            })
+        })
+    </script>  -->
+    <!-- <div id="div1" class="">鼠标移入改变样式，鼠标移出恢复。</div>
+    <script>
+  $(function(){
+      $('#div1').hover(function(){
+          $(this).addClass('hover')
+         
+      },function(){
+          $(this).removeClass('hover')
+      });
+  })
+  
+    </script> -->
+    <!-- <div id="outer">
+        <label><input type="checkbox">两周内自动登陆</label>
+        <div id="tips" style="display: none;">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+    </div>
+<script>
+$(function(){
+    $('#outer input').hover(function(){
+        $('#tips').css('display','block');
+    },function(){
+        $('#tips').css('display','none');
+    })
+})
+</script> -->
+    <!-- <div id="outer">
+        <button>输入法</button>
+        <ul id="ime" style="display: none;">
+            <li><a href="javascript:;">手写</a></li>
+            <li><a href="javascript:;">拼音</a></li>
+            <li id="close"><a href="javascript:;">关闭</a></li>
+        </ul>
+    </div>
+    <script>
+   $(function(){
+       $('#outer button').on('click',function(){
+           $('#ime').css('display','block');
+           $('#close').on('click',function(){
+               $('#ime').css('display','none');
+           })
+       })
+   })
+    </script> -->
+    <!-- <div id="outer">
+        <div>
+            <strong>新华网</strong>
+            北京5月29日电(新华社记者)从三聚氰胺到瘦肉精，从染色馒头到毒豆芽，在食品中添加非食用物质和滥用食品添加剂已成为百姓餐桌上突出的"不安全因素"。近期以来，从北京到广东，从浙江到宁夏，一场打击食品非法添加的"风暴"席卷全国。
+        </div>
+        <div>
+            4月21日，国务院部署严厉打击食品非法添加和滥用食品添加剂专项行动后，广东省高度重视，随即召开了全省电视电话会议。省委领导强调，食品安全是"高压线"，决不能"下不为例"；抓好食品安全要突出一个
+            "<strong>严</strong>"
+            字，做到
+            <strong>严防</strong>、
+            <strong>严查</strong>、
+            <strong>严处</strong>。
+        </div>
+        <div>
+            <strong>宁夏重点开展了四轮问题乳粉彻查清缴工作</strong>，
+            对全区养殖源头、鲜奶收购和乳制品生产、经营、餐饮等环节的2.7万家单位进行了全面清查，共查处问题乳粉案件4起、涉案企业3家，吊销2家乳粉生产企业生产许可证。
+        </div>
+        <div>
+            做好风险监测工作是许多地方加强食品安全的重点工作之一。在北京，
+            <strong style="color:red;">全市设立了3000个风险监测点</strong>，
+            建立了包括3000余种食品添加剂和非法添加物的数据库，对110家国内外食品相关组织、媒体发布的线索进行监测，及时进行风险评估，加强抽检控制。
+        </div>
+    </div>
+    <script>
+    $(function(){
+        $('#outer div').each(function(i,e){
+            $(e).on('click',function(){
+                alert(e.innerHTML)
+            })
+        })
+    })
+    </script> -->
+
+    <!-- <div id="outer">
+        <label><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"><span>输入数字求和，数字之间用半角","号分隔</span></label>
+        <p><button>求和</button></p>
+        <strong class="sum"></strong>
+    </div>
+    <script>
+
+        $('#outer button').on('click', function () {
+            var count = $('#outer input').val().split(',').map(x => +x).reduce((x, y) => x + y, 0);
+            console.log(count);
+            $('.sum').html(count);
+        })
+    </script> -->
+
+    <!-- <div id="overlay"></div>
+            <div id="win">
+                <h2>
+                    <span id="close">×</span>
+                </h2>
+            </div>
+            <center>
+                <button>弹出层</button>
+            </center>
+          <script>
+          $(function(){
+              $('button').on('click',function(){
+                $('#overlay').css('display','block');
+                $('#win').css('display','block'); 
+                $('#close').on('click',function(){
+                    $('#overlay').css('display','none');
+                $('#win').css('display','none');
+                })
+              })
+          })
+          </script>   -->
+    <!-- <div id="outer">
+        <p>
+            <label>属性名：</label>
+            <input type="text" value="background">
+        </p>
+        <p>
+            <label>属性值：</label>
+            <input type="text" value="blue">
+        </p>
+        <p>
+            <label></label>
+            <button>确定</button>
+            <button>重置</button>
+        </p>
+    </div>
+    <div id="div1">在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。</div>
+    <script>
+     $(function(){
+         function changeStyle(elem,name,value){
+             var data={};
+             data[name]=value;
+             $(elem).css(data);
+         }
+         $('button').eq(0).on('click',function(){
+             changeStyle('#div1',$('#outer input').eq(0).val(),$('#outer input').eq(1).val())
+         })
+         $('button').eq(1).on('click',function(){
+            $('#div1').removeAttr('style')
+         })
+     })
+    </script> -->
+
+    <body>
+        <!-- <ul id="imgList">
+            <li><img src="img/7.png"></li>
+            <li><img src="img/4.png"></li>
+            <li><img src="img/3.png"></li>
+            <li><img src="img/4.png"></li>
+            <li><img src="img/5.png"></li>
+            <li><img src="img/6.png"></li>
+            <li><img src="img/7.png"></li>
+            <li><img src="img/5.png"></li>
+            <li><img src="img/3.png"></li>
+            <li><img src="img/2.png"></li> -->
+
+
+    </body>
+    <!-- <script>
+        $(function () {
+
+            $('#imgList li').hover(function () {
+                $(this).addClass('current')
+            }, function () {
+                $(this).removeClass('current')
+            })
+
+
+            // $('').each(function (i, e) {
+
+            // })
+        })
+
+    </script> -->
+
+    <!-- <body>
+        <div id="outer">
+            <ul id="tab">
+                <li class="current">第一课</li>
+                <li>第二课</li>
+                <li>第三课</li>
+            </ul>
+            <div id="content">
+                <ul style="display:block;">
+                    <li>网页特效原理分析</li>
+                    <li>响应用户操作</li>
+                    <li>提示框效果</li>
+                    <li>事件驱动</li>
+                    <li>元素属性操作</li>
+                    <li>动手编写第一个JS特效</li>
+                    <li>引入函数</li>
+                    <li>网页换肤效果</li>
+                    <li>展开/收缩播放列表效果</li>
+                </ul>
+                <ul>
+                    <li>改变网页背景颜色</li>
+                    <li>函数传参</li>
+                    <li>高重用性函数的编写</li>
+                    <li>126邮箱全选效果</li>
+                    <li>循环及遍历操作</li>
+                    <li>调试器的简单使用</li>
+                    <li>典型循环的构成</li>
+                    <li>for循环配合if判断</li>
+                    <li>className的使用</li>
+                    <li>innerHTML的使用</li>
+                    <li>戛纳印象效果</li>
+                    <li>数组</li>
+                    <li>字符串连接</li>
+                </ul>
+                <ul>
+                    <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+                    <li>JavaScript出现的位置、优缺点</li>
+                    <li>变量、类型、typeof、数据类型转换、变量作用域</li>
+                    <li>闭包：什么是闭包、简单应用、闭包缺点</li>
+                    <li>运算符：算术、赋值、关系、逻辑、其他运算符</li>
+                    <li>程序流程控制：判断、循环、跳出</li>
+                    <li>命名规范：命名规范及必要性、匈牙利命名法</li>
+                    <li>函数详解：函数构成、调用、事件、传参数、可变参、返回值</li>
+                    <li>定时器的使用：setInterval、setTimeout</li>
+                    <li>定时器应用：站长站导航效果</li>
+                    <li>定时器应用：自动播放的选项卡</li>
+                    <li>定时器应用：数码时钟</li>
+                    <li>程序调试方法</li>
+                </ul>
+            </div>
+        </div>
+
+<script>
+$(function(){
+   
+  
+  
+    $('#tab li').hover(function(){
+  
+        $(this).addClass('current').siblings().removeClass('current');
+        var index = $(this).index();
+        $("#content ul") .eq(index).show().siblings().hide();
+ 
+    })
+     
+})
+</script> -->
+</body>
+
+<body>
+    <div id="calendar">
+        <ul>
+            <li><strong>1</strong>JAN</li>
+            <li><strong>2</strong>FER</li>
+            <li><strong>3</strong>MAR</li>
+            <li><strong>4</strong>APR</li>
+            <li><strong>5</strong>MAY</li>
+            <li class="current"><strong>6</strong>JUN</li>
+            <li><strong>7</strong>JUL</li>
+            <li><strong>8</strong>AUG</li>
+            <li><strong>9</strong>SEP</li>
+            <li><strong>10</strong>OCT</li>
+            <li><strong>11</strong>NOV</li>
+            <li><strong>12</strong>DEC</li>
+        </ul>
+        <div id="msg">
+            <h2>
+                <strong>6</strong>
+                月节日
+            </h2>
+            <p>端午节：6月4日至6日放假3天。</p>
+        </div>
+    </div>
+<script>
+    	var oArray = [
+		"元旦：1月1日至3日放假三天。",
+		"春节：2月2日至8日放假7天。",
+		"妇女节：3月8日妇女节，与我无关。",
+		"清明节：4月3日至5日放假3天",
+		"劳动节：4月30日至5月2日放假3天。",
+		"端午节：6月4日至6日放假3天。",
+		"小暑：7月7日小暑。不放假。",
+		"七夕节：8月6日七夕节。不放假。",
+		"中秋节：9月10日至12日放假3天。",
+		"国庆节：10月1日至7日放假7天。",
+		"立冬：11月8日立冬。不放假。",
+		"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+	];
+$('#calendar li').hover(function(){
+    var curindex=$(this).index();
+    $(this).addClass('current').siblings().removeClass('current');
+    $('#msg strong').html(curindex+1)
+    $('#msg p').html(oArray[curindex]);
+   
+})
+</script>
+
+</body>
+
+</body>
+
+
+</html>
+

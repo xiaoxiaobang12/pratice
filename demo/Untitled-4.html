@@ -1,0 +1,72 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        body,div{margin:0;padding:0;}
+            body{color:#fff;font:16px/1.5 \5fae\8f6f\96c5\9ed1;}
+            #countdown{width:300px;text-align:center;background:#1a1a1a;margin:10px auto;padding:20px 0;}
+            input{border:0;width:283px;height:50px;cursor:pointer;margin-top:20px;background:url(img/bg.jpg) no-repeat;}
+            input.cancel{background-position:0 -50px;}
+            span{color:#000;width:80px;line-height:2;background:#fbfbfb;border:2px solid #b4b4b4;margin:0 10px;padding:0 10px;}
+            </style>
+
+</head>
+
+<body>
+    <div id="countdown">
+        <span>01</span>分钟<span>40</span>秒
+        <input type="button" value>
+    </div>
+    <script>
+
+        $(function () {
+            var timer;
+            $(':button').on('click', function () {
+
+                if ($(this).hasClass('')) {
+                    timer = setInterval(updateTime, 1000);
+
+                } else {
+                    clearInterval(timer);
+
+                }
+                $(this).toggleClass('cancle');
+            })
+function format(a){
+    a.toString().replace(/^\d$/,'0$1')
+}
+
+
+            function updateTime() {
+
+                var account = +$('span').eq(0).text() * 60 + (+$('span').eq(1).text());
+                console.log(account);
+                if (account <= 0) {
+                    clearInterval(timer);
+                    return;
+                }
+               
+                account--;
+                console.log(account);
+                var minute = $('span').eq(0).text(parseInt(account / 60));
+           
+          
+                account %= 60;
+                console.log(account)
+                var second = $('span').eq(1).text(parseInt(account));
+                
+
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

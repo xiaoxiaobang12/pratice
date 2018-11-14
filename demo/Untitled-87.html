@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <style>
+            .isActive {
+                color: red
+            }
+            </style>
+</head>
+
+<body>
+    <!-- <div id='example-8'>
+        <input type="radio" id='one' value="One" v-model='picked'>
+        <label for="one">One</label>
+        <br>
+        <input type="radio" id='two' value='Two' v-model='picked' >
+        <label for="two">Two</label>
+        <br>
+        <span>Picked:{{picked}}</span>
+    </div> -->
+    <!-- <div id='example-9'>
+        <select v-model="selected"  >
+            
+            <option v-for="option in options" v-bind:value='option.value'>
+                {{option.text}}
+            </option>
+            
+        </select>
+        <span>Selected:{{selected}}</span>
+    </div> -->
+    <!-- <div id='example-10'>
+            <input type="checkbox" id='one1' name="picked" v-model='picked' true-value='yes' false-value='no'>
+            <label for="one1" >{{picked == 'yes' ? '已选择':'未选择'}}</label>
+            <br>
+        <input type="radio" id='one' name="picked" v-model='picked' value='yes'>
+        <label for="one" >One</label>
+        <br>
+        <input type="radio" id='two' name="picked" v-model='picked' value='no'>
+        <label for="two" >Two</label>
+        <br>
+        <span>Picked:{{picked}}</span>
+        <br>
+        <button  >选择</button>
+    </div> -->
+    <!-- <div id='example-11'>
+        <input type="radio" id='one' v-model='pick' v-bind:value='a'>
+        <label for="one">{{pick=='a'?'true':'false'}}</label>
+        <br>
+        <span>Pick is {{pick}}</span>
+        <button v-on:click=show>点击按钮变成true</button>
+    </div> -->
+    <!-- <div id='example-12'>
+        <select v-model="selected">
+            <option v-bind:value="number">gfjhgjhgjgh</option>
+            <option v-bind:value="number2">sdfssddfs</option>
+        </select>
+        <span>Pick is {{selected}}</span>
+       </div> -->
+    <!-- <div id='example-15'>
+           <input v-model.number="message" type='number' placeholder="edit me" >
+           <p>Message is{{message}}</p>
+       </div> -->
+    <!-- <div id='components-demo'>
+           <button-counter></button-counter>
+           <button-counter></button-counter>
+           <button-counter></button-counter>
+       </div> -->
+    <!-- <div id=blog-post-demo>
+        <div v-bind:style='{fontSize:postFontSize+"em"}'>
+            <blog-post 
+            v-for='post in posts' 
+            v-bind:key='post.id'
+             v-bind:post='post' 
+             v-on:enlarge-text='enlarge'></blog-post>
+        </div>
+        <select v-model="postFontSize" >
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <textarea v-model="postFontSize" ></textarea>
+     
+    </div> -->
+    <!-- v-on:enlarge-text='onEnlargeText'  -->
+    <div id='example' class="static">
+        <my-component :class="{active:isActive}" v-bind:style='theStyle'></my-component>
+      <span v-bind:style='theStyle'>{{message}}</span>
+    </div>
+  <!-- <style>
+  .isActive{
+      color: red;
+      font:'103px'
+  }
+  </style> -->
+
+   
+
+    <script src="index3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script  type=text/javascript src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <meta charset="utf-8" />
+
+    <title></title>
+    <style>
+        body,div,ul,li,p{margin:0;padding:0;}
+        body{color:#666;font:12px/1.5 Arial;}
+        ul{list-style-type:none;}
+        #star{position:relative;width:600px;margin:10px auto;}
+        #star ul,#star span{float:left;display:inline;height:19px;line-height:19px;}
+        #star ul{margin:0 10px;}
+        #star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(img/small_1.png) no-repeat;}
+        #star strong{color:#f60;padding-left:10px;}
+        #star li.on{background-position:0 -28px;}
+        #star p{position:absolute;top:20px;width:159px;height:60px;display:none;background:url(img/ico.gif) no-repeat;padding:7px 10px 0;}
+        #star p em{color:#f60;display:block;font-style:normal;}
+        </style>
+        
+
+</head>
+
+<body>
+    <!-- <form>
+        <input class="target" type="text" value="Field 1">
+        <select class="target">
+            <option value="option1" selected="selected">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>
+    </form>
+    <div id="other">
+        Trigger the handler
+    </div>
+<script>
+
+        // $(".target").change(function () {
+        //     alert("Handler for .change() called.");
+        // });
+        $( "#other" ).click(function() {
+  $( ".target" ).change();
+}); -->
+    <!-- </script> -->
+    <div id="star">
+        <span>点击星星就能打分</span>
+        <ul>
+            <li><a href="javascript:;">1</a></li>
+            <li><a href="javascript:;">2</a></li>
+            <li><a href="javascript:;">3</a></li>
+            <li><a href="javascript:;">4</a></li>
+            <li><a href="javascript:;">5</a></li>
+        </ul>
+        <span></span>
+        <p></p>
+    </div>
+    
+    <script>
+    $(function(){
+        var arr = [
+				"很不满意|差得太离谱，与卖家描述的严重不符，非常不满",
+				"不满意|部分有破损，与卖家描述的不符，不满意",
+				"一般|质量一般，没有卖家描述的那么好",
+				"满意|质量不错，与卖家描述的基本一致，还是挺满意的",
+				"非常满意|质量非常好，与卖家描述的完全一致，非常满意"
+				]
+$('#star')
+    })
+    
+    
+    </script>
+</body>
+
+</html>>

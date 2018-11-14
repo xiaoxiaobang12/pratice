@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        // ['Pascal', "Ruby", "Lua"].forEach((x) => $("#test-div ul").append(`<li><span>${x}</span></li>`)); //  $().appendTo );
+        // $("#test-div ul li").sort(function (x, y) {
+        //     var $x = $(x);
+        //     var $y = $(y);
+        //     console.log($x.text())
+
+        //     if ($x.text().trim() > $y.text().trim()) {
+        //         $x.before($y);
+
+        //     }
+        // });
+        var ul = $('#test-div>ul');
+     
+ul.append('<li><span>Pascal</span></li>');
+ul.append('<li><span>Lua</span></li>');
+ul.append('<li><span>Ruby</span></li>');
+
+var resx=ul.find('li').sort((x, y) => {
+            if (x.innerText > y.innerText) {
+                return 1;
+            }
+        })
+        ul.text('<li><span>Pascal</span></li>');
+
+
+
+    </script>
+
+</body>
+
+</html>

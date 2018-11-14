@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>数组练习：各种数组方法的使用</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        div{
+            color:green;
+            padding:10px 15px;
+            margin:12px 0;
+            background:#f0f0f0;
+            border:1px dotted #333;
+            font:12px/1.5 Courier New;
+            word-wrap:break-word
+            }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <div>January(1),February(2),March(3),April(4),May(5),June(6),July(7),Aguest(8),September(9),October(10),November(11),December(12)</div>
+    <input type="button" value="删除January(1)" />
+    <input type="button" value="删除December(12)" />
+    <div>0,1,2,3,4,5,6,7,8,9</div>
+    <input type="button" value="复制" />
+    <input type="button" value="还原" />
+    <div>red,green,blue,white,yellow,black,brown</div>
+    <input type="button" value="还原" />
+    <input type="button" value="删除前三项" />
+    <input type="button" value="删除第二至三项" />
+    <input type="button" value="在第二项后插入(orange, purple)" />
+    <input type="button" value="替换第二项和第三项" />
+    <script>
+        $(function () {
+        $('input[type=button]').click(function () {
+                var arr=[], bS1 = bS2 = true;
+                var text = $(this).val();
+
+                switch (text) {
+                    case "添加January(1)":
+                    case "删除January(1)":
+                        arr =($('div').eq(0).text()).split(',');
+                        bS1 ? (arr.shift(), $(this).val('添加January(1)'), bS1 = false) : (arr.unshift('January(1)'), $(this).val('删除January(1)'), bS1 = true);
+                        $('div').eq(0).text(arr.join());
+                        break;
+
+                    case "添加December(12)":
+                    case "删除December(12)":
+                        arr = ($('div').eq(0).text()).split(',');
+                        bS2 ? (arr.pop(), $(this).val('添加December(12)'), bS2 = false) : (arr.push('December(12)'), $(this).val('删除December(12)'), bS2 = true);
+                        $('div').eq(0).text(arr.join());
+                        break;
+
+                    case "复制":
+                        arr = ($('div').eq(1).text()).split(',');;
+                        arr = arr.concat(arr)
+
+                        $('div').eq(1).text(arr.join()).split(',');;
+                        break;
+                    case "删除前三项":
+                        arr = ($('div').eq(2).text()).split(',');;
+                        arr.splice(0,3);
+                        console.log(arr)
+                        $('div').eq(2).text(arr.join());
+                        break;
+                    case "删除第二至三项":
+                    arr = ($('div').eq(2).text()).split(',');
+                    arr.splice(1,2);
+                    $('div').eq(2).text(arr.join());
+                    break;
+                    case "在第二项后插入(orange, purple)":
+                    arr = ($('div').eq(2).text()).split(',');
+                    arr.splice(1,0,'orange','purple');
+                    $('div').eq(2).text(arr.join());
+                    break;
+                    case "替换第二项和第三项":
+                    arr = ($('div').eq(2).text()).split(',');
+                    arr.splice(1,2,"#009900", "#0000ff")
+                    $('div').eq(2).text(arr.join());
+                    break;
+                }
+
+
+            });
+
+            $('input').eq(3).on('click', function () {
+                arr = ($('div').eq(1).text());
+                arr.length = 10;
+                $('div').eq(1).text(arr.join())
+            })
+            $('input').eq(4).on('click', function () {
+            arr = ["red","green","blue","white","yellow","black","brown"];
+
+            console.log(arr)
+            $('div').eq(2).text(arr.join());
+            console.log(arr)
+
+      })
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

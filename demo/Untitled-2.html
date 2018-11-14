@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- <style>
+        body,
+        dl,
+        dt,
+        dd,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Tahoma;
+            font-size: 12px;
+        }
+
+        label,
+        input,
+        a {
+            vertical-align: middle;
+        }
+
+        label {
+            padding: 0 10px 0 5px;
+        }
+
+         a {
+            color: #09f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+       dl {
+            width: 120px;
+            margin: 10px auto;
+            padding: 10px 5px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+
+         dt {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #666;
+        }
+
+       dt label {
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 10px;
+        }  
+    </style> -->
+    <!-- 
+    <style>
+        body{
+            font:12px/1.5 arial;
+            text-align:center;
+            }
+         .f-text{
+                width:50px;
+                border:1px solid #ccc;
+                background:#f0f0f0;
+                font-family:inherit;
+                padding:3px;
+                }
+            span{
+                color:green;
+                padding-right:10px;
+                font-weight:700;
+                }
+            strong{
+                padding:0 10px;
+                }
+            </style> -->
+    <!-- <style>
+        body{text-align:center;}
+                input{font:12px arial;cursor:pointer;padding:0 10px;}
+                </style> -->
+    <!-- <style>
+        body{font:12px/1.5 arial;text-align:center;}
+        .f-text{width:50px;border:1px solid #ccc;background:#f0f0f0;font-family:inherit;padding:3px;}
+        .f-btn{margin:0 10px;}
+        strong{padding:0 10px;}
+        span{font-weight:700;color:red;}
+    </style> -->
+    <!-- <style>
+        body{font:12px/1.5 arial;text-align:center;}
+        .f-text{width:50px;border:1px solid #ccc;background:#f0f0f0;font-family:inherit;padding:3px;}
+        .f-btn{margin:0 10px;}
+        strong{padding:0 10px;}
+        span{font-weight:700;color:red;}
+    </style> -->
+    <!-- <style>
+            body{text-align:center;font:700 30px/1.5 arial;}
+    </style> -->
+    <!-- <style>
+            body{font:12px/1.5 arial;text-align:center;}
+            .f-text{width:50px;border:1px solid #ccc;background:#f0f0f0;font-family:inherit;padding:3px;margin-right:10px;}
+   </style> -->
+    <style>
+        body,div,p,ul,li,input{margin:0;padding:0;}
+        ul{list-style-type:none;}
+        a{color:#fff;outline:none;text-decoration:none;}
+        body{font:700 24px/1.5 Arial;}
+        #calc{position:relative;width:300px;background:#000;margin:10px auto;}
+        #calc p{color:#fff;text-align:right;font:12px/20px Arial;padding:0 5px;}
+        #calc .f-text{border:0;width:290px;height:84px;text-align:right;font:700 50px/84px Arial;background:url(img/inputBg.jpg) repeat-x;padding:0 5px;}
+        #calc ul{position:relative;overflow:hidden;zoom:1;background:url(img/bg.jpg);padding:0 0 17px 8px;}
+        #calc ul li{float:left;width:63px;height:41px;margin:17px 10px 0 0;}
+        #calc ul li a{display:block;width:63px;height:41px;line-height:41px;text-align:center;background:url(img/btn.png) no-repeat;}
+        #calc ul li a:hover{background-position:-63px 0;}
+        #calc ul li.btn-1 a{background-position:0 -41px;}
+        #calc ul li.btn-1 a:hover{background-position:-63px -41px;}
+        #calc ul li.btn-2{position:absolute;top:174px;right:0;height:99px;}
+        #calc ul li.btn-2 a{height:99px;line-height:99px;background-position:0 -164px;}
+        #calc ul li.btn-2 a:hover{background-position:-63px -164px;}
+        #calc ul li.btn-3{width:136px;}
+        #calc ul li.btn-3 a{width:136px;background-position:0 -82px;}
+        #calc ul li.btn-3 a:hover{background-position:0 -123px;}
+        #formula{position:absolute;top:20px;background:none;border:0;font:700 12px/1.5 Arial;width:280px;padding:3px 15px 0 5px;text-align:right;}
+        </style>
+
+
+
+
+
+</head>
+
+<body>
+    <!-- <dl>
+        <dt><input type="checkbox" id="checkAll" /><label>全选</label><a href="javascript:;">反选</a></dt>
+        <dd>
+            <p><input type="checkbox" name="item" /><label>选项（一）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（二）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（三）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（四）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（五）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（六）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（七）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（八）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（九）</label></p>
+            <p><input type="checkbox" name="item" /><label>选项（十）</label></p>
+        </dd>
+    </dl>
+    <center>1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</center>
+    <script>
+       $(function(){
+           $('#checkAll').on('click',function(){
+               var isChecked=$(this).is(':checked');
+               $('input[name=item]').prop('checked',isChecked);
+               $('dt label').text(isChecked?'全不选':'全选');
+        })  
+        $('dt a').on('click',function(){
+            $('input[name=item]').each(function(i,e){
+                $(e).prop('checked',!$(e).prop('checked')); 
+            })
+
+             var isAll=$('input[name=item]:checked').length==$('input[name=item]').length;
+            $('#checkAll').prop('checked',isAll);
+            $('dt label').text(isAll?'全不选':'全选')
+        })  
+        $('input[name=item]').on('click',function(){
+            var isAll=$('input[name=item]:checked').length==$('input[name=item]').length;
+            $('#checkAll').prop('checked',isAll);
+            $('dt label').text(isAll?'全不选':'全选')
+        })   
+       })
+
+
+
+ 
+
+    </script> -->
+    <!-- <input type="text" class="f-text" />
+    <strong>+</strong>
+    <input type="text" class="f-text" />
+    <strong>=</strong>
+    <span>?</span>
+    <input type="button" value="求和" /> 
+    <script>
+
+        $(':button').on('click', function () {
+
+            if ($('input.f-text').val() == "") {
+                alert('请输入数字！')
+            }
+            var sum = 0, count;
+
+            $('input.f-text').each(function (i, e) {
+
+                sum += parseInt($(this).val()) || 0;
+
+                console.log(e, $(e).val(), sum, count)
+
+            })
+            $('span').text(sum)
+            console.log(sum)
+        })
+    </script> -->
+    <!-- <input type="button" value="0" />
+    <script>
+         var count = 0;
+        $('input:button').on('click', function () {
+           
+          $(this).val(++count)
+            alert(count)
+        })
+    </script> -->
+
+    <!-- <input type="text" class="f-text" />
+    <strong>vs</strong>
+    <input type="text" class="f-text" />
+    <input type="button" value="最大的数是 &raquo;" class="f-btn" />
+    <span>？</span>
+    <script>
+var arr=[];
+    $('.f-btn').on('click',function(){
+        $('.f-text').each(function(i,e){
+        arr.push(+($(this).val()));
+         console.log(arr);
+     
+        })
+        $('span').text(Math.max(...arr));
+    })
+    </script> -->
+    <!-- <script>
+var count=0;
+setInterval(show,1000);
+
+  function show(){
+       $('body').html(++count);
+       } 
+
+</script> -->
+    <!-- <input type="text" class="f-text" />
+<input type="button" value="是否为两位数" />
+<script>
+$(':button').on('click',function(){
+if($('.f-text').val()==''){
+    alert("请输入数字！") ;
+}else if(($('.f-text').val()).length==2){
+alert('✓是两位数');
+}else {
+    alert('这是'+($('.f-text').val()).length+'位数')
+}
+})
+</script> -->
+    <div id="calc">
+        <p>By - Ferris QQ:21314130</p>
+        <input class="f-text" type="text" readonly="readonly" maxlength="9" value="0" />
+        <ul>
+            <li class="btn-1"><a href="javascript:void(0)">c</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">%</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">÷</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">×</a></li>
+            <li><a href="javascript:void(0)">7</a></li>
+            <li><a href="javascript:void(0)">8</a></li>
+            <li><a href="javascript:void(0)">9</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">-</a></li>
+            <li><a href="javascript:void(0)">4</a></li>
+            <li><a href="javascript:void(0)">5</a></li>
+            <li><a href="javascript:void(0)">6</a></li>
+            <li class="btn-1"><a href="javascript:void(0)">+</a></li>
+            <li><a href="javascript:void(0)">1</a></li>
+            <li><a href="javascript:void(0)">2</a></li>
+            <li><a href="javascript:void(0)">3</a></li>
+            <li class="btn-2"><a href="javascript:void(0)">=</a></li>
+            <li class="btn-3"><a href="javascript:void(0)">0</a></li>
+            <li><a href="javascript:void(0)">.</a></li>
+        </ul>
+        <input id="formula" type="text" readonly="readonly" value="" />
+    </div>
+    <script>
+
+        $(function () {
+
+            var $calc = $('#calc');
+            var $formula = $('#formula');
+            var $fText = $('.f-text');
+            var $a = $('#calc li');
+            var s=false;
+            var i=0;
+            $a.on('click', function () {
+                txt = $(this).find('a').text();
+                switch (txt) {
+                    case 'c':
+                        $(".f-text").val(0);
+                        $("#formula").val('');
+                        break;
+                    case '%':
+                    count('%')
+                        break;
+                    case '÷':
+                    count('/')
+                        break;
+                    case '×':
+                    count('*')
+                        break;
+                    case '-':
+                    count('-')
+                        break;
+                    case '+':
+                    count('+')
+                        break;
+                    case '=':
+
+
+                        s || $formula.val($formula.val() + $fText .val());
+
+
+                        $fText .val(eval($formula.val().replace(/\%\/\*\-\+/, '')));
+                        $fText .val($fText .val().substr(0, 10).replace('NaN', 0))
+
+                        s = true;
+                        break;
+                    case '.':
+                        if ($fText.val().search(/[\.\%\/\*\-\+]/) != -1)
+                            break;
+                    default:
+                        s && ($fText.val() = 0, $formula.val() = '', s = false);
+                        $fText.val().length < 10 && ($fText.val($fText.val())+txt).replace(/^[0\%\/\*\-\+](\d)/,"$1")
+
+                }
+
+
+
+
+
+                function count(a) {
+                    if (s) {
+                        $formula.val($fText.val() + a);
+
+                        $fText.val(a);
+                        console.log(s, $fText.val(), a)
+
+                    } else {
+                        /[\%\/\*\-\+]$/.test($fText.val()) || ($formula).val($formula.val() + $fText.val());
+                        $fText.val(a) ;
+                        /[\%\/\*\-\+]$/.test($formula.val()) || ($formula.val($formula.val() + $fText.val()));
+                        $formula.val($formula.val().slice(-1) != a ? $formula.val().replace(/.$/, a) : $formula.val());
+                        console.log(s, $fText.val(), a)
+                    }
+                }
+
+            })
+
+
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

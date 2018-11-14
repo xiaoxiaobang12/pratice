@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Page Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <h1>example-1</h1>
+    <ul id='example-1'>
+        <li v-for='(item,index) in items'>
+            {{parentMessage}} - {{index}} - {{item.message}}
+        </li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-2</h1>
+    <ul id='v-for-object' class="demo">
+        <li v-for='(value,key,index) in object' :key='value.id'>
+            {{index}}. {{key}}: {{value}}
+        </li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-3</h1>
+    <ul id="example-3">
+        <li v-for="(item,index) in items">
+            {{index}} : {{ item.message }}
+        </li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-4</h1>
+    <ul id="example-4">
+        <li v-for="(item,index) in items">
+            {{index}}: {{item}}
+        </li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-5</h1>
+    <ul id='example-5'>
+        <li v-for='n in even(numbers)'>{{n}}</li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-6</h1>
+    <div id='example-6'>
+        <span>{{ n }} </span>
+        <button @click='addCount'>点击加1</button>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-7</h1>
+    <ul id='example-7'>
+        <template v-for='item in items'>
+            <li>{{item.msg}}</li>
+            <li class='divider' role='presentation'></li>
+        </template>
+    </ul>
+    <style>
+        #example-7 li {
+            list-style: none;
+        }
+
+        #example-7 li.divider {
+            border-bottom: solid 1px red;
+        }
+    </style>
+    <br>
+    <hr>
+
+    <h1>example-8</h1>
+    <ul id='example-8'>
+        <li v-for='todo in todos' v-if='!todo.isComplete'>
+            {{todo}}
+        </li>
+    </ul>
+    <br>
+    <hr>
+
+    <h1>example-9</h1>
+
+    <div id='example-9' v-bind:data-length='todos.length'>
+        <ul v-if="todos.length">
+            <li v-for="todo in todos">
+                {{ todo }}
+            </li>
+        </ul>
+        <p v-else>No todos left!</p>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-10</h1>
+    <div id='todo-list-example'>
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">Add a todo</label>
+            <input v-model="nextTodoText" id='new-todo' placeholder="E.g.Feed the cat">
+            <button>Add</button>
+        </form>
+        <ol>
+            <li is='todo-item' v-for='(todo,index) in todos' v-bind:key='todo.id' v-bind:title='todo.title' v-on:remove='todos.splice(index,1)'></li>
+        </ol>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-11</h1>
+    <div id=example-11>
+        <button v-on:click='counter+=1'>Add 1</button>
+        <p>The button above has been clicked {{counter}} times.</p>
+    </div>
+    <br>
+    <hr>
+
+
+    <h1>example-12</h1>
+    <div id='example-12'>
+        <form v-on:submit.prevent="greet">
+            <label for="new-text"> Add a want </label>
+            <input v-model='nextWantText' id='new-text' placeholder="If you turn skill into instincts,you will be unbeatable.">
+
+            <button>Greet</button>
+
+        </form>
+        <ul>
+            <li is='want-item' v-for='(want,index) in wants' v-bind:key='want.id' v-bind:title='want.title' v-on:remove='wants.splice(index,1)'></li>
+        </ul>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-15</h1>
+    <div id='example-15'>
+        <button v-on:click="warn('Form cannot be submitted yet.',$event)">
+            Sumbit
+        </button>
+        <!-- <button v-on:click="say('what')">Say what</button>  -->
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-16</h1>
+    <div id='example-16'>
+        <span>Multiline message is:</span>
+        <p style='white-space: pre-line;'>{{message}}</p>
+        <br>
+        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-17</h1>
+    <div id='example-17'>
+        <form>
+
+            <input type="checkbox" id='checkbox' v-model='checked'>
+            <label for="checkbox">{{checked}}</label>
+
+        </form>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-18</h1>
+    <div id='example-18'>
+        <input type="checkbox" id="jack" value="Jack" v-model='checkedNames'>
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model='checkedNames'>
+        <label for="jack">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model='checkedNames'>
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names:{{checkedNames}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-19</h1>
+    <div id='example-19'>
+        <input type="radio" id="one" value="One" v-model='picked'>
+        <label for="one">One</label>
+        <input type="radio" id="two" value="Two" v-model='picked'>
+        <label for="two">Two</label>
+        <br>
+        <span>Picked:{{picked}}</span>
+
+    </div>
+
+    <style>
+        #example-19 span{
+    background: green;
+    font:200px,
+   
+}
+</style>
+    <br>
+    <hr>
+
+    <h1>example-20</h1>
+    <div id='example-20'>
+        <select v-model="selected">
+
+            <option v-for='option in options' v-bind:value='option.value'>
+                {{option.text}}
+            </option>
+
+        </select>
+        <span>Selected: {{selected}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-21</h1>
+    <div id='example-21'>
+        <input type="checkbox" v-model='toggle' true-value='yes' false-value='no'>
+        <span>Toggle is :{{toggle}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-22</h1>
+    <div id='example-22'>
+        <input type="radio" v-model='pick' v-bind:value='a'>
+        <span>Picked is :{{pick}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-23</h1>
+    <div id='example-23'>
+        <select v-model="selected">
+            <option v-bind:value="number">123</option>
+        </select>
+        <span>Select:{{selected}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-24</h1>
+    <div id='example-24'>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-25</h1>
+    <div id='example-25'>
+        <blog-post v-for='post in posts' v-bind:key='post.id' v-bind:title='post.title'>
+        </blog-post>
+    </div>
+    <br>
+    <hr>
+
+
+    <h1>example-26</h1>
+    <div id='example-26' :style='{fontSize:postFontSize+"em"}'>
+
+        <blog-post v-for='post in posts' v-bind:key='post.id' v-bind:post='post' v-on:enlarge-text='postFontSize += $event'>
+        </blog-post>
+    </div>
+    <br>
+    <hr>
+
+
+    <h1>example-27</h1>
+    <div id='example-27'>
+        <custom-input v-model='searchText' placeholder='Please input...'>r6546</custom-input>
+        <span>ShowInputContent is :{{ searchText }}</span>
+    </div>
+    <br>
+    <hr>
+
+
+
+    <h1>example-28</h1>
+    <div id='example-28'>
+        <alert-box> Something bad happened.</alert-box>
+    </div>
+    <br>
+    <hr>
+
+
+    <h1>example-29</h1>
+    <div id='dynamic-component-demo' class='demo'>
+        <button v-for='tab in tabs' v-bind:key='tab.name' v-bind:class="['tab-button',{active: currentTab.name===tab.name}]"
+            v-on:click='currentTab=tab'>
+            {{tab.name}}
+        </button>
+        <keep-alive>
+            <component v-bind:is='currentTab.component' class="tab"></component>
+        </keep-alive>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-30</h1>
+
+    <div id='outer' style="margin: 0 auto ; text-align:center">
+        <demo-width v-on:widening="styleObject.currentWidth += 100"></demo-width>
+        <demo-height v-on:heighten='styleObject.currentHeight += 100'></demo-height>
+        <demo-color v-on:discoloration='styleObject.background="red"'></demo-color>
+        <demo-hide v-on:hidden='styleObject.display="none"'></demo-hide>
+        <demo-reset v-on:reseting='resile'></demo-reset>
+        <div style="margin: 10px auto;" v-bind:style='comStyle'></div>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-31</h1>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #outer {
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #skin,
+        #nav {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #skin {
+            margin: 10px 0;
+        }
+
+        #skin li {
+            float: left;
+            width: 6px;
+            height: 6px;
+            cursor: pointer;
+            overflow: hidden;
+            margin-right: 10px;
+            text-indent: -9999px;
+            border-width: 4px;
+            border-style: solid;
+        }
+
+        #skin li.current {
+            background: #fff !important;
+        }
+
+
+        #nav {
+            border: 1px solid #fff;
+        }
+
+        #nav li {
+            float: left;
+            width: 82px;
+            line-height: 25px;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+
+        #nav li.last {
+            width: 83px;
+            border-right-width: 0;
+        }
+
+        #nav li a {
+            color: #fff;
+        }
+    </style>
+
+    <div id="example-31">
+
+        <ul id="skin">
+            <li v-for="obj in styleObjects" v-bind:id="obj.id" v-bind:class="{current: obj.id == current.id }"
+                v-bind:style='{background:obj.color} ' v-bind:title="obj.title" v-on:click="changeSkin(obj)"> {{
+                obj.title }} </li>
+        </ul>
+        <ul id='nav' v-bind:style='{background:current.color} '>
+            <li><a href="javascript:;">新闻</a></li>
+            <li><a href="javascript:;">娱乐</a></li>
+            <li><a href="javascript:;">体育</a></li>
+            <li><a href="javascript:;">电影</a></li>
+            <li><a href="javascript:;">音乐</a></li>
+            <li class="last"><a href="javascript:;">旅游</a></li>
+        </ul>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-32</h1>
+    <div id='example-32'>
+        <p v-for='obj in parameters'>
+            <input v-bind:type=obj.type v-bind:value=obj.value>
+        </p>
+        <demo-button v-on:obtain-parameters='getParameter'></demo-button>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-33</h1>
+    <div id='example-33'>
+        <base-input v-model="username" class="username-input" placeholder="Enter your username"></base-input>
+        <br>
+        <base-input @focus.native='onFocus'></base-input>
+        <br>
+        <button v-on:click='show'>点击显示内容</button>
+
+        <span>{{username}}</span>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-34</h1>
+    <div id='example-34'>
+        <base-checkbox v-model='lovingVue'></base-checkbox>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-35</h1>
+    <div id='example-35'>
+        <navigation-link url="https://cn.vuejs.org/v2/style-guide/#%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%90%8D-%E5%BC%BA%E7%83%88%E6%8E%A8%E8%8D%90">
+
+            <font-awesome-icon name='user'> Logged in as {{ user.name }}</font-awesome-icon>
+            Your Profile
+            <demo-button>按钮</demo-button>
+        </navigation-link>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-36</h1>
+    <div id='example-36'>
+        <base-layout>
+            <h1 slot="header">Here might be a page title</h1>
+            <p>A paragraph for the main content.</p>
+            <p>And another one.</p>
+            <p slot="footer">Here's some contact info</p>
+        </base-layout>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-37</h1>
+    <div id='example-37'>
+        <todo-list v-bind:todos="todos">
+            <template slot-scope="slotProps">
+                <span v-if="slotProps.todo.isComplete">✓</span>
+
+                {{ slotProps.todo.text }}
+            </template>
+        </todo-list>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-38</h1>
+    <div id='example-38'>
+        <todo-list v-bind:todos="todos">
+            <template slot-scope="{ todo }">
+                <span v-if="todo.isComplete">✓</span>
+                {{ todo.text }}
+            </template>
+        </todo-list>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-39</h1>
+    <div id='example-39'>
+        <base-input ref="usernameInput"></base-input>
+        <button @click.left="focus()">xx</button>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-40</h1>
+    <div id='example-40'>
+        <tree-folder v-bind:folder="folder"></tree-folder>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-41</h1>
+    <div id='example-41'>
+        <my-component inline-template>
+            <div>
+                <p>These are compiled as the component's own template.</p>
+                <p>Not parent's transclusion content.</p>
+            </div>
+        </my-component>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-42</h1>
+    <div id='example-42'>
+
+    </div>
+
+    <script type='text/x-template' id='hello-world-template'>
+
+        <p> Hello hello hello</p>
+   
+     </script>
+
+     <br>
+     <hr>
+ 
+     <h1>example-43</h1>
+     <div id='example-43'>
+        <terms-of-service> </terms-of-service>
+     </div>
+     <br>
+     <hr>
+ 
+     <h1>example-44</h1>
+     <div id='example-44'>
+        <demo-fade></demo-fade>
+     </div>
+     <style>
+         .fade-enter-active, .fade-leave-active {
+         transition: opacity .5s;
+        }
+     .fade-enter, .fade-leave-to  {
+      opacity: 0;
+      }
+     </style>
+     <br>
+     <hr>
+ 
+     <h1>example-45</h1>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+
+
+
+     
+    <script src='index-1.js'></script>
+   
+</body>
+
+</html>

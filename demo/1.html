@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>淡入淡出轮播图</title>
+    <style>
+        ul{
+            list-style: none; 
+            }
+        * {
+            margin: 0;
+            padding: 0;
+         }
+         #ads{
+			width: 590px; height: 250px;
+		
+			margin: 20px auto;
+			position: relative;
+		}
+        #ads img{
+			width: 100%; height: 100%;
+			position: absolute;
+			left: 0; top: 0;
+			display: none;
+		}
+		#ads img.show{ display: block; }
+      
+      #ads ul{
+			position: absolute;
+			bottom: 10px; left: 240px; 
+		}
+        
+      #ads ul li{
+		width: 12px;
+        height: 12px;
+        float: left;
+        background:rgba(255, 255, 255, 0.7);
+        margin-right:8px;
+        border-radius:50%;
+        cursor: pointer;
+		}
+        #ads ul li.active{
+            background:orange;
+        }
+      
+
+
+    </style>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    var timer;
+    var curindex=0;
+    var len=$('#ads li').length;
+    $('#ads').hover(function(){
+        clearInterval(timer);
+    },changeImg)
+
+    $('#ads li').on('click',function(){
+        clearInterval(timer);
+        curindex=$(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('#ads img').eq(curindex).fadeIn(200).siblings('img').fadeOut(200);
+       
+    })
+    function changeImg(){
+      timer=setInterval(function(){
+          curindex++;
+          console.log(curindex)
+          if(curindex>len-1)   curindex=0;
+        
+          $('#ads img').eq(curindex).fadeIn(200).siblings('img').fadeOut(200);
+          $('#ads li').eq(curindex).addClass('active').siblings().removeClass('active');
+      },1000)
+    }
+    changeImg();
+})
+
+  
+</script>
+
+<body>
+    <div id="ads">
+        <img src="img/1.png" alt="" class="show">
+        <img src="img/6.png" alt="">
+        <img src="img/3.png" alt="">
+        <img src="img/4.png" alt="">
+        <img src="img/5.png" alt="">
+        <img src="img/7.png" alt="">
+        <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+
+    </div>
+    </div>
+</body>
+
+</html>
