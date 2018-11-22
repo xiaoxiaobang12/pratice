@@ -542,39 +542,305 @@
    
      </script>
 
-     <br>
-     <hr>
- 
-     <h1>example-43</h1>
-     <div id='example-43'>
+    <br>
+    <hr>
+
+    <h1>example-43</h1>
+    <div id='example-43'>
         <terms-of-service> </terms-of-service>
-     </div>
-     <br>
-     <hr>
- 
-     <h1>example-44</h1>
-     <div id='example-44'>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-44</h1>
+    <div id='example-44'>
         <demo-fade></demo-fade>
-     </div>
-     <style>
-         .fade-enter-active, .fade-leave-active {
+    </div>
+    <style>
+        .fade-enter-active, .fade-leave-active {
          transition: opacity .5s;
         }
      .fade-enter, .fade-leave-to  {
       opacity: 0;
       }
      </style>
-     <br>
-     <hr>
- 
-     <h1>example-45</h1>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <br>
+    <hr>
 
+    <h1>example-45</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <div id='example-45'>
 
+        <button @click='show = !show'>
+            Toggle
+        </button>
+        <transition v-on:before-enter='beforeEnter' v-on:enter='enter' v-on:leave='leave' v-bind:css='false'>
+            <p v-if='show'>Demo</p>
+        </transition>
 
-     
-    <script src='index-1.js'></script>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-46</h1>
+    <div id='example-46'>
+        <!-- <transition>
+          <button 
+          :key='isEditing'
+          @click='show'
+          >
+              {{isEditing?'Save':'Edit'}}
+          </button>
+      </transition> -->
+        <demo-slide></demo-slide>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-47</h1>
+    <div id='example-47'>
+        <div>
+            <demo-multiple-button-trans></demo-multiple-button-trans>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <h1>example-48</h1>
+    <div id='example-48'>
+        <demo-fadeoutin></demo-fadeoutin>
+    </div>
+    <br>
+    <hr>
+
+    <h1>example-49</h1>
+    <div id='transition-components-demo'>
+
+        <input type='radio' value="v-a" v-model='view' @click='contentChange'>
+        <label for="a">A</label>
+        <input type="radio" value="v-b" v-model='view'>
+        <label for="b">B</label>
+        <br>
+
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
+    </div>
+
+    <style>
+        .component-fade-enter-active, .component-fade-leave-active{
+       transition:opacity .3s ease;
+   }
+   .component-fade-enter, .component-fade-leave-to{
+       opacity:0
+   }
    
+   </style>
+    <br>
+    <hr>
+
+    <h1>example-50</h1>
+    <div id='example-50'>
+        <list-demo></list-demo>
+    </div>
+    <style>
+        .list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to
+/* .list-leave-active for below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
+    <br>
+    <hr>
+
+    <h1>example-51</h1>
+
+    <div id='example-51' class="demo">
+
+        <flip-list-demo></flip-list-demo>
+    </div>
+    <style>
+        .flip-list-move {
+  transition: transform 1s;
+}
+</style>
+
+    <h1>example-52</h1>
+    <div id='example-52' class="demo">
+
+        <list-complete-demo> </list-complete-demo>
+    </div>
+    <style>
+        .list-complete-item {
+  transition: all 1s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-complete-enter, .list-complete-leave-to
+{
+  opacity: 0;
+  transform: translateY(30px);
+} 
+.list-complete-leave-active {
+  position: absolute;
+} 
+</style>
+ <br>
+ <hr>
+
+
+
+
+    <!-- <div>
+        <input type="text" id="iptKey">
+        <button onclick="query()">查询</button>
+         
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script>
+        function query() {
+            var textToSearch = document.getElementById('iptKey').value;
+            var url = 'https://api.douban.com/v2/book/search?q=' + textToSearch ;
+            $.ajax({
+                url:url,
+                dataType:"jsonp"
+            }).done(function(r){
+                console.log(r); 
+            })
+        }
+    </script> -->
+
+
+    <h1>example-53</h1>
+    <div id='sudoku-demo' class='demo'>
+        <h1>Lazy Sudoku<h1>
+        <p>Keep hitting the shuffle button until you win.</p>
+    <sudoku-component></sudoku-component>
+    </div>
+    <style>
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 238px;
+  margin-top: 10px;
+}
+.cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaa;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+.cell:nth-child(3n) {
+  margin-right: 0;
+}
+.cell:nth-child(27n) {
+  margin-bottom: 0;
+}
+.cell-move {
+  transition: transform 1s;
+}
+    </style>
+<br>
+<hr>
+
+<!-- <h1>example-53</h1>
+
+<div id='example-53'>
+  <stagger-list-demo></stagger-list-demo>
+    
+</div> -->
+
+<h1>example-54</h1>
+
+<div id="dynamic-fade-demo" class="demo">
+  Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
+  Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">
+  <transition
+    v-bind:css="false"
+    v-on:before-enter="beforeEnter"
+    v-on:enter="enter"
+    v-on:leave="leave"
+  >
+    <p v-if="show">hello</p>
+  </transition>
+  <button
+    v-if="stop"
+    v-on:click="stop = false; show = false"
+  >Start animating</button>
+  <button
+    v-else
+    v-on:click="stop = true"
+  >Stop it!</button>
+</div>
+<br>
+<hr>
+
+ <h1>example-55</h1>
+<div id='animated-number-demo'>
+    <input  v-model.number='number' type="number" step="10">
+    <p>{{animatedNumber}}</p>
+</div>
+<br>
+<hr>
+
+ <h1>example-56</h1>
+<div id='example-56'>
+        <change-graphcolor-demo></change-graphcolor-demo>
+</div> 
+<style>
+.example-56-color-preview {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+</style>
+<br>
+<hr>
+
+ <h1>example-57</h1>
+<div id='example-57'>
+     <input v-model.number='firstNumber' type="number" step="10">+  
+     <input v-model.number='secondNumber' type="number" step='10'>=
+     {{result}}
+     <br>
+     <animated-integer :value='firstNumber'></animated-integer>+
+     <animated-integer :value='secondNumber'></animated-integer>=
+     <animated-integer :value='result'></animated-integer>
+</div> 
+<br>
+<hr>
+
+ <h1>example-58</h1>
+<div id='example-58'>
+
+
+<br>
+<hr>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+
+<script src='index-1.js'></script>
 </body>
 
 </html>
